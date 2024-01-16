@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { io } from "socket.io-client";
 import swal from "sweetalert";
-const URL = "http://serveo.net:17514/";
+const URL = "https://shell-game-a6u6.vercel.app/";
 // const URL = "https://76ff91048896478a9bcc1e602f2a9b7d.serveo.net";
 export default function Home() {
   const inputChatRef = useRef(null);
