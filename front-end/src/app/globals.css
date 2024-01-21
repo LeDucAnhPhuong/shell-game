@@ -17,10 +17,128 @@
 }
 
 body {
-  background-image: linear-gradient(#0f0f0f, #0f0f0f); 
-   background-color: #000000;
+  background-image: linear-gradient(#0f0f0f, #0f0f0f);
+  background-color: #000000;
   color: rgb(var(--foreground-rgb));
 }
-.swal-content__input{
-  color : #000
+
+.swal-content__input {
+  color: #000
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  padding-inline: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@keyframes new-mess-content {
+  0% {
+    transform: translateY(10px) scale(.9);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateY(0px) scale(1.1);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes new-mess-name {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes effectClick {
+  0% {
+    width: 0px;
+    opacity: .3;
+  }
+
+  100% {
+    width: 300px;
+    opacity: 0;
+  }
+}
+
+.transition-new-mess-content {
+  animation: new-mess-content 0.5s 0s ease-out;
+}
+
+.transition-new-mess-name {
+  animation: new-mess-name 0.5s 0s ease-out;
+}
+
+.list__effect {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+.button__effect {
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  animation: effectClick 1s 0.1s ease-out 1;
+  animation-fill-mode: none;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+
+}
+
+.btn-style {
+  background-color: #08AEEA;
+  max-width: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.btn-style::before {
+  content: "";
+  background-color: #2AF598;
+  background-image: linear-gradient(to right, #2AF598 30%, #08AEEA 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale(4) translateX(-100%);
+  transition: all 0.7s ease-out;
+
+}
+
+.btn-style:hover:before {
+  transform: scale(4) translate(37%);
 }
